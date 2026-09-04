@@ -61,8 +61,8 @@ async function generateCertificate(name) {
         // Center horizontally
         const nameX = canvas.width / 2;
 
-        // Move name lower into the designated name area
-        const nameY = canvas.height * 0.60;
+        // Name position
+        const nameY = canvas.height * 0.52;
 
         ctx.fillText(name, nameX, nameY);
 
@@ -83,7 +83,7 @@ async function generateCertificate(name) {
       };
 
       templateImage.onerror = () =>
-        reject(new Error('Failed to load template'));
+        reject(new Error('Failed to load certificate template'));
 
       templateImage.src = '/Certificate.png';
     });

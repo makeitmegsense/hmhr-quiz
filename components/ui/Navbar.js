@@ -30,7 +30,7 @@ const navLinks = [
     type: 'route',
   },
   {
-    label: 'Back to Home',
+    label: 'Seva Dal Home',
     href: 'https://congressevadal.in/',
     type: 'route',
   },

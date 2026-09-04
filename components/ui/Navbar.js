@@ -21,7 +21,7 @@ export default function Navbar() {
 const navLinks = [
   {
     label: t.nav.about,
-    href: '#about',
+    href: '/',
     type: 'anchor',
   },
   {

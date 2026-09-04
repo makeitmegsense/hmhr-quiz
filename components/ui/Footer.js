@@ -185,7 +185,7 @@ export default function Footer() {
                     hover:text-[#19AAED]
                   "
                 >
-                  Champions
+                  Leaderboard
                 </a>
               </li>
 

@@ -31,7 +31,7 @@ const navLinks = [
   },
   {
     label: 'Back to Home',
-    href: 'https://www.congressevadal.in',
+    href: 'https://congressevadal.in/',
     type: 'route',
   },
 ];

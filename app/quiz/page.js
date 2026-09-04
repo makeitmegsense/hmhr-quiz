@@ -34,29 +34,51 @@ async function generateCertificate(name) {
   try {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
+
     if (!ctx) return null;
+
     const templateImage = new Image();
     templateImage.crossOrigin = 'anonymous';
+
     return new Promise((resolve, reject) => {
       templateImage.onload = () => {
         canvas.width = templateImage.width;
         canvas.height = templateImage.height;
+
         ctx.drawImage(templateImage, 0, 0);
+
+        // Name
         ctx.fillStyle = '#06038D';
-        ctx.font = 'bold 100px Arial';
+        ctx.font = 'bold 76px Arial';
         ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
         const nameX = canvas.width / 2;
-        const nameY = canvas.height * 0.46;
+        const nameY = canvas.height * 0.435;
+
         ctx.fillText(name, nameX, nameY);
-        canvas.toBlob((blob) => {
-          if (blob) resolve(URL.createObjectURL(blob));
-          else reject(new Error('Failed to create blob'));
-        }, 'image/jpeg', 0.9);
+
+        canvas.toBlob(
+          (blob) => {
+            if (blob) {
+              resolve(URL.createObjectURL(blob));
+            } else {
+              reject(new Error('Failed to create blob'));
+            }
+          },
+          'image/jpeg',
+          0.9
+        );
       };
-      templateImage.onerror = () => reject(new Error('Failed to load template'));
+
+      templateImage.onerror = () =>
+        reject(new Error('Failed to load template'));
+
       templateImage.src = '/Certificate.png';
     });
-  } catch { return null; }
+  } catch {
+    return null;
+  }
 }
 
 function downloadCertificate(certUrl, userName) {

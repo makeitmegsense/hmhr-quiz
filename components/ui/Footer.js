@@ -87,7 +87,7 @@ export default function Footer() {
             {/* Congress Seva Dal link */}
 
             <a
-              href="https://www.congressevadal.in"
+              href="https://congressevadal.in/"
               target="_blank"
               rel="noopener noreferrer"
               className="
@@ -219,7 +219,7 @@ export default function Footer() {
 
 
             <a
-              href="https://www.congressevadal.in"
+              href="https://congressevadal.in/"
               target="_blank"
               rel="noopener noreferrer"
               className="
@@ -449,7 +449,7 @@ export default function Footer() {
             </span>
 
             <a
-              href="https://www.congressevadal.in"
+              href="https://congressevadal.in/"
               target="_blank"
               rel="noopener noreferrer"
               className="

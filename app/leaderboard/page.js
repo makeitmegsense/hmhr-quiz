@@ -75,7 +75,7 @@ export default function LeaderboardPage() {
         </Link>
         <div className="flex items-center gap-2">
           <div className="w-8 h-8">
-            <img src='/logo.jpg' alt='logo' className='rounded-lg' />
+            <img src='/Congress_Seva_Dal_2.png' alt='logo' className='rounded-lg' />
           </div>
           <span style={{ color:'#06038D', fontSize:'14px', fontWeight:'700' }}>HMHR</span>
         </div>

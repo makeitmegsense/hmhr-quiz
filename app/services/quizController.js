@@ -40,8 +40,23 @@ exports.submitQuiz = async (req, res) => {
 // GET /api/quiz/leaderboard
 exports.getLeaderboard = async (req, res) => {
     try {
+        // Start of the current week (Monday 00:00:00)
+        const now = new Date();
+        const day = now.getDay(); // Sunday = 0, Monday = 1, ..., Saturday = 6
+
+        const daysSinceMonday = day === 0 ? 6 : day - 1;
+
+        const startOfWeek = new Date(now);
+        startOfWeek.setDate(now.getDate() - daysSinceMonday);
+        startOfWeek.setHours(0, 0, 0, 0);
+
         const allDocs = await QuizSubmission
-            .find({}, 'name mobile state score total percentage submittedAt timeTaken')
+            .find(
+                {
+                    submittedAt: { $gte: startOfWeek },
+                },
+                'name mobile state score total percentage submittedAt timeTaken'
+            )
             .sort({ score: -1, submittedAt: 1 })
             .limit(10000)
             .lean();
@@ -54,7 +69,9 @@ exports.getLeaderboard = async (req, res) => {
         for (const doc of allDocs) {
             if (doc.score !== prevScore) {
                 distinctRanks++;
+
                 if (distinctRanks > 100) break;
+
                 rank = distinctRanks;
                 prevScore = doc.score;
             }

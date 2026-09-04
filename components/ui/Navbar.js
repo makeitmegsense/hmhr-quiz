@@ -171,7 +171,7 @@ const navLinks = [
                 "
               >
                 <img
-                  src="/logo.jpg"
+                  src="/Congress_Seva_Dal_2.png"
                   alt="Hum Mein Hai Rajiv"
                   className="
                     h-full

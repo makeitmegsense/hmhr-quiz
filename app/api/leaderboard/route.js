@@ -4,7 +4,7 @@ const API_BASE = 'https://api.shaktiabhiyan.in';
 
 export async function GET() {
   try {
-    const res = await fetch(`${API_BASE}/api/quiz/leaderboard`, { cache: 'no-store' });
+    const res = await fetch(`${API_BASE}/api/v1/sevadal/leaderboard`, { cache: 'no-store' });
     const data = await res.json();
     return NextResponse.json(data, { status: res.status });
   } catch {

@@ -48,7 +48,7 @@ export default function Footer() {
 
               <div className="flex h-14 w-14 items-center justify-center">
                 <Image
-                  src="/logo.jpg"
+                  src="/Congress_Seva_Dal_2.png"
                   alt="Hum Mein Hai Rajiv"
                   width={56}
                   height={56}

@@ -133,7 +133,7 @@ export default function LiveQuizSection() {
     };
 
     try {
-      const res = await fetch('https://api.shaktiabhiyan.in/api/quiz/enthusiasts', {
+      const res = await fetch('https://api.shaktiabhiyan.in/api/v1/sevadal/enthusiasts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

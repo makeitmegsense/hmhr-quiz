@@ -278,7 +278,7 @@ export default function HeroSection() {
               </Link>
 
 
-              <a href="#rules">
+              <a href="#about">
                 <button
                   className="
                     btn-secondary

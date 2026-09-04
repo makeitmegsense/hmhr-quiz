@@ -462,7 +462,7 @@ export default function HeroSection() {
                     <div className="text-center">
 
                       <div className="text-7xl mb-4">
-                        📡
+                        💻
                       </div>
 
                       <div

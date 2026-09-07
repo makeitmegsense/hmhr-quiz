@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 const API_BASE =  'https://api.shaktiabhiyan.in';
-
+/*new route for quiz api call*/
 export async function POST(request) {
   try {
     const body = await request.json();

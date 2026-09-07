@@ -41,10 +41,7 @@ exports.submitQuiz = async (req, res) => {
 exports.getLeaderboard = async (req, res) => {
     try {
         const allDocs = await QuizSubmission
-            .find(
-                {},
-                'name mobile state score total percentage submittedAt timeTaken'
-            )
+            .find({}, 'name mobile state score total percentage submittedAt timeTaken')
             .sort({ score: -1, submittedAt: 1 })
             .limit(10000)
             .lean();
@@ -57,9 +54,7 @@ exports.getLeaderboard = async (req, res) => {
         for (const doc of allDocs) {
             if (doc.score !== prevScore) {
                 distinctRanks++;
-
                 if (distinctRanks > 100) break;
-
                 rank = distinctRanks;
                 prevScore = doc.score;
             }

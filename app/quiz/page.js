@@ -85,7 +85,7 @@ async function generateCertificate(name) {
       templateImage.onerror = () =>
         reject(new Error('Failed to load certificate template'));
 
-      templateImage.src = '/Certificate.png';
+      templateImage.src = '/Certificate.jpeg';
     });
   } catch {
     return null;
